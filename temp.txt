@@ -1,10 +1,14 @@
-var d=document.getElementsByClassName("list-group-item");
-for(var i=0;i<d.length;i++){
-    d[i].style.backgroundColor="grey";
+var f=document.querySelector('.list-group-item:nth-child(2)');
+f.style.backgroundColor="green";
 
-}
+var g=document.querySelector('.list-group-item:nth-child(3)');
+g.style.display='none';
 
-var e=document.getElementsByTagName('li');
-for(var i=0;i<e.length;i++){
-    e[i].style.backgroundColor="pink";
+
+var h=document.querySelectorAll('.list-group-item');
+h[1].style.color='green';
+
+var i=document.querySelectorAll('.list-group-item:nth-child(odd)');
+for(var a=0;a<i.length;a++){
+    i[a].style.backgroundColor='green';
 }
