@@ -1,6 +1,10 @@
 
 var sub=document.getElementById('for');
 sub.addEventListener('submit',cred);
+var list=document.getElementById('items');
+
+
+
 
 function cred(e){
     e.preventDefault(); 
@@ -15,10 +19,27 @@ function cred(e){
      let obj_st=JSON.stringify(obj);
      localStorage.setItem(em,obj_st);
      //document.write(nm + ' - ' +em +' - '+ tel);
-     var list=document.getElementById('items');
+     var btn=document.createElement('button');
      var li=document.createElement('li');
-     li.className='list-item';
+     btn.id=('buttonid');
      li.appendChild(document.createTextNode(nm + ' - ' +em +' - '+ tel));
+
+     
+     btn.className='button';
+     btn.appendChild(document.createTextNode('Delete'));
+     li.appendChild(btn);
+
+
+
      list.appendChild(li);
-    
+     console.log(btn)
+    btn.addEventListener('click',function(e){
+      if(e.target.id==='buttonid'){
+         var li=e.target.parentElement;
+         list.removeChild(li);
+      }
+    })
 }
+
+
+
