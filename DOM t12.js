@@ -27,18 +27,39 @@ function cred(e){
      
      btn.className='button';
      btn.appendChild(document.createTextNode('Delete'));
+
+     var ed=document.createElement('button');
+     ed.id='editbtn';
+     ed.appendChild(document.createTextNode('Edit'));
      li.appendChild(btn);
+     li.appendChild(ed);
 
 
 
      list.appendChild(li);
-     console.log(btn)
+     
     btn.addEventListener('click',function(e){
       if(e.target.id==='buttonid'){
          var li=e.target.parentElement;
          list.removeChild(li);
       }
     })
+    
+      ed.addEventListener('click',function(e){
+         if(e.target.id==='editbtn'){
+            let myobj=JSON.parse(obj_st);
+            document.getElementById('nm').value=nm;
+            document.getElementById('em').value=em;
+            document.getElementById('tell').value=tel;
+            console.log(myobj.name)
+            localStorage.removeItem(em);
+            var li=e.target.parentElement;
+            list.removeChild(li);
+            
+
+         }
+      })
+
 }
 
 
